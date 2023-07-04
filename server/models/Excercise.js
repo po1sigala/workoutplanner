@@ -33,6 +33,11 @@ const exerciseSchema = new Schema({
     required:true,
     default:0,
     min:0
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: 'Category',
+    required: true
   }
 });
 

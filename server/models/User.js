@@ -50,7 +50,7 @@ const userSchema = new Schema({
     required:true,
     default: 4
   },
-  weight:{
+  weightLb:{
     type:Number,
     required:false,
   },
