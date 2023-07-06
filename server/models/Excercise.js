@@ -8,22 +8,12 @@ const exerciseSchema = new Schema({
     required:false,
     trim:true
   },
-  currentMaxWeight:{
-    type: Number,
-    required:false,
+  targetHeavy:{
+    type:Number,
+    required:true,
     trim:true
   },
-  targetMaxWeight:{
-    type:Number,
-    required:false,
-    trim:true
-  },
-  sessionWeight:{
-    type:Number,
-    required:false,
-    
-  },
-  repsTarget:{
+  targetReps:{
     type:Number,
     required:true,
     default:1
@@ -33,6 +23,11 @@ const exerciseSchema = new Schema({
     required:true,
     default:0,
     min:0
+  },
+  heavyActual:{
+    type:Number,
+    required:false,
+    
   },
   category: {
     type: Schema.Types.ObjectId,

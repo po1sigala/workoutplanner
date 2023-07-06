@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Workout = require('./Excercise');
+const Session = require('./Session');
+const Record = require("./Record")
 
 const userSchema = new Schema({
   firstName: {
@@ -54,7 +55,11 @@ const userSchema = new Schema({
     type:Number,
     required:false,
   },
-  sessions: [Session.schema]
+  isAdmin:{
+    type:Boolean
+  },
+  sessions: [Session.schema],
+  records:[Record.schema]
 });
 
 // set up pre-save middleware to create password
