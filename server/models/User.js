@@ -4,8 +4,10 @@ const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 const Session = require('./Session');
 const Record = require("./Record")
+const Regimen= require("./Regimen")
 
 const userSchema = new Schema({
+ 
   firstName: {
     type: String,
     required: true,
@@ -41,25 +43,24 @@ const userSchema = new Schema({
     required:false,
     trim:true
   },
-  agressiveness:{
+  planAgressiveness:{
     type:String,
     trim:true,
-    default:"regular"
-  },
-  workoutDays:{
-    type:Number,
-    required:true,
-    default: 4
+    default:"strength"
   },
   weightLb:{
     type:Number,
     required:false,
   },
   isAdmin:{
-    type:Boolean
+    type:Boolean,
+    default:false
   },
+  regimen: [Regimen.schema]
+  ,
   sessions: [Session.schema],
-  records:[Record.schema]
+  
+  
 });
 
 // set up pre-save middleware to create password

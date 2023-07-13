@@ -8,32 +8,19 @@ const exerciseSchema = new Schema({
     required:false,
     trim:true
   },
-  targetHeavy:{
-    type:Number,
-    required:true,
-    trim:true
-  },
-  targetReps:{
-    type:Number,
-    required:true,
-    default:1
-  },
-  repsActual:{
-    type:Number,
-    required:true,
-    default:0,
-    min:0
-  },
-  heavyActual:{
-    type:Number,
-    required:false,
-    
-  },
   category: {
     type: Schema.Types.ObjectId,
     ref: 'Category',
     required: true
-  }
+  },
+ isHeavy:{
+    type:String,
+    required:false
+  },
+  records:[{
+    type:Schema.Types.ObjectId,
+    ref:"Record"
+  }],
 });
 
 const Workout = mongoose.model('Workout', exerciseSchema);

@@ -3,16 +3,17 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const recordSchema = new Schema({
+
   exercise: {
     type: String,
     required: true,
     trim: true
   },
-  maxWeight:{
+  weight:{
     type:Number
   },
   recordType:{
-    type:String
+    type:Number
   }
 });
 

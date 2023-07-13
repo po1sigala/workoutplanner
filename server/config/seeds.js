@@ -53,6 +53,7 @@ db.once('open', async () => {
   const records=await Record.insertMany([
 
   ])
+  const weeks=await Week.insertMany([])
 
   console.log('exercises seeded');
 
